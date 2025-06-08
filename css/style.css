@@ -1,0 +1,154 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f2f6f9;
+    color: #333;
+}
+
+header {
+    background-color: #006c67;
+    color: white;
+    text-align: center;
+    padding-top: 1.5em; /* Ajuste para espacio arriba de la nav */
+    padding-bottom: 0; /* Para que la nav quede pegada abajo del header principal */
+}
+
+.logo {
+    font-size: 3rem;
+    margin-bottom: 0.5em; /* Espacio entre el logo y el título */
+}
+
+h1 {
+    margin-top: 0;
+    margin-bottom: 0.5em;
+}
+
+.slogan {
+    font-style: italic;
+    font-size: 1.2rem;
+    margin-bottom: 1em; /* Espacio antes de la nav */
+}
+
+/* Estilos para la barra de navegación */
+.main-nav {
+    background-color: #f7a400; /* Un color naranja/amarillo similar al ejemplo */
+    width: 100%;
+    margin-top: 1.5em; /* Separación con el eslogan */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Sombra sutil */
+}
+
+.main-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex; /* Para que los elementos se coloquen en línea */
+    justify-content: center; /* Centrar los elementos de la navegación */
+    flex-wrap: wrap; /* Permite que los elementos se envuelvan en pantallas pequeñas */
+}
+
+.main-nav ul li {
+    margin: 0; /* Eliminar margen predeterminado de la lista */
+}
+
+.main-nav ul li a {
+    display: block; /* Para que el enlace ocupe todo el espacio del li */
+    padding: 0.8em 1.5em;
+    color: white; /* Color del texto de los enlaces */
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease; /* Transición suave al pasar el ratón */
+}
+
+.main-nav ul li a:hover,
+.main-nav ul li a.active { /* Clase 'active' para el enlace de la página actual */
+    background-color: #e08b00; /* Color un poco más oscuro al pasar el ratón o si es la página activa */
+}
+
+main {
+    padding: 2em;
+    max-width: 900px;
+    margin: auto;
+}
+
+section {
+    margin-bottom: 2em;
+    background-color: white;
+    padding: 1.5em;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+h2 {
+    color: #004643;
+    border-bottom: 2px solid #f7a400; /* Línea decorativa debajo de los títulos de sección */
+    padding-bottom: 0.5em;
+    margin-bottom: 1em;
+}
+
+ul {
+    padding-left: 1.2em;
+}
+
+footer {
+    text-align: center;
+    background-color: #00332e;
+    color: white;
+    padding: 1em;
+    margin-top: 2em;
+}
+
+/* Media Queries para responsividad */
+@media (max-width: 768px) {
+    .main-nav ul {
+        flex-direction: column; /* Apilar los elementos en pantallas pequeñas */
+        align-items: center; /* Centrar los elementos apilados */
+    }
+
+    .main-nav ul li a {
+        width: 100%; /* Que el enlace ocupe todo el ancho disponible */
+        text-align: center;
+    }
+}
+
+body {
+    /* ... estilos existentes ... */
+    background: linear-gradient(to bottom, #e0f7fa, #a7d9b9); /* De azul cielo a verde suave */
+    /* O de arena a turquesa */
+    /* background: linear-gradient(to bottom, #fdf8e1, #87ceeb); */
+    /* Asegúrate de que el degradado no opaque el contenido principal */
+    background-attachment: fixed; /* Para que el degradado no se mueva con el scroll */
+}
+
+body {
+    /* ... estilos existentes ... */
+    background-image: url('images/colombia-paisaje.jpg'); /* Ruta a tu imagen */
+    background-size: cover; /* Cubre todo el espacio disponible */
+    background-position: center center; /* Centra la imagen */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    background-attachment: fixed; /* La imagen se queda fija al hacer scroll */
+    /* Añade una capa de color semitransparente por encima para mejor legibilidad */
+    position: relative; /* Necesario para el pseudo-elemento */
+    z-index: 1;
+}
+
+body::before { /* Esto crea una capa oscura sobre la imagen de fondo */
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3); /* Un 30% de opacidad negra */
+    z-index: -1; /* Asegura que esté detrás del contenido pero encima de la imagen */
+}
+
+/* Si usas este método, es posible que necesites ajustar los colores del texto principal
+para que resalten más sobre el fondo oscurecido, por ejemplo:
+main {
+    color: #f8f8f8; /* Un gris muy claro o blanco */
+
+h2
+{
+    color: #f7a400; /* Tus colores de acento */
+}
